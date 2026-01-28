@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Krishi Seva</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🌱 Krishi Seva</h1>
+        <p class="tagline-en">
+            Empowering Farmers with AI for Healthier Crops
+        </p>
+
+        <p class="tagline-hi">
+            स्वस्थ फसलों के लिए किसानों को AI से सशक्त बनाना
+        </p>
+
+        <h2>Crop Disease Detection</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <br>
+            <button type="submit">Detect Disease</button>
+        </form>
+
+        {% if prediction %}
+        <h3>🦠 Disease: {{ prediction }}</h3>
+        <p>Confidence: {{ confidence }}%</p>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>
